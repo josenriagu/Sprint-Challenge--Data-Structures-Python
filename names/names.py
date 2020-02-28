@@ -29,27 +29,27 @@ for name_1 in names_1:
 '''
 
 # Using BST (approx. 0.1096s)
+'''
+# form the root node with the first list item
+bst = BinarySearchTree(names_1[0])
 
-# # form the root node with the first list item
-# bst = BinarySearchTree(names_1[0])
+# insert all elements of list 1
+for name in names_1:
+    bst.insert(name)
 
-# # insert all elements of list 1
-# for name in names_1:
-#     bst.insert(name)
-
-# for name in names_2:
-#     # check for existence of list 2 items in the BST
-#     if bst.contains(name):
-#         # if found, append to duplicate
-#         duplicates.append(name)
-
+for name in names_2:
+    # check for existence of list 2 items in the BST
+    if bst.contains(name):
+        # if found, append to duplicate
+        duplicates.append(name)
+'''
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
 
-# using Set and intersection
+# using Set and intersection (approx. 0.0069s)
 '''
 duplicates = set(names_2) - set(names_1)
 '''
