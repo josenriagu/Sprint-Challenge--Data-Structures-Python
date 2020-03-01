@@ -43,6 +43,14 @@ class LinkedList:
         # if we've gotten here, then the target node isn't in our list
         return False
 
+    def reverse_list(self):
+        # initialize current node from head
+        current_node = self.head
+        # while current node is not None
+        while current_node:
+            self.add_to_head(current_node.value)
+            current_node = current_node.next_node
+
     def reverse_list1(self):
         # TO BE COMPLETED
         # initialize current node from head
@@ -50,7 +58,7 @@ class LinkedList:
         # initialize a variable to hold previous node
         prev_node = None
         # while current node is not None
-        while current_node is not None:
+        while current_node:
             # initialize a variable to hold the next node
             next_node = current_node.next_node
             # set previous as new next
@@ -76,7 +84,7 @@ class LinkedList:
         # recursively call the function on next and curr
         self.recursive_reverse_helper(next, curr)
 
-    def reverse_list(self):
+    def recursive_everse_list(self):
         # base case: empty list
         if self.head is None:
             return
